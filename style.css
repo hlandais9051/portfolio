@@ -1,0 +1,293 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #1a1a2e;
+  color: white;
+  position: sticky; /* Reste en haut au scroll */
+  top: 0; /* Collé tout en haut */
+  z-index: 100; /* Passe par dessus le contenu */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #a78bfa;
+}
+
+/* SECTIONS */
+section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 span {
+  color: #a78bfa;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #a78bfa;
+  padding-bottom: 0.5rem;
+}
+
+p {
+  color: #666;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* =====================
+   PROJETS
+   ===================== */
+
+/* Grille qui s'adapte automatiquement à la largeur de l'écran */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Carte individuelle d'un projet */
+.project-card {
+  background: #f9f9f9; /* Couleur de fond — modifiez ici */
+  border: 1px solid #eee; /* Bordure — modifiez ici */
+  border-radius: 10px; /* Arrondi des coins */
+  padding: 1.5rem;
+  transition: transform 0.2s; /* Animation au survol */
+}
+
+/* Légère élévation au survol */
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Titre du projet */
+.project-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a2e; /* Couleur du titre — modifiez ici */
+}
+
+/* Description du projet */
+.project-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-card p em {
+  font-size: 0.7rem;
+}
+
+/* Conteneur des liens */
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Liens "Voir le projet" et "GitHub" */
+.project-links a {
+  font-size: 0.85rem;
+  color: #a78bfa; /* Couleur des liens — modifiez ici */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   COMPÉTENCES
+   ===================== */
+
+/* Grille des compétences — une colonne par défaut */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Bloc d'une compétence */
+.skill {
+  width: 100%;
+}
+
+/* Ligne avec le nom et le pourcentage */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Nom de la compétence (ex: HTML) */
+.skill-name {
+  font-weight: bold;
+  color: #1a1a2e; /* Couleur du nom — modifiez ici */
+}
+
+/* Pourcentage affiché à droite */
+.skill-percent {
+  color: #a78bfa; /* Couleur du % — modifiez ici */
+}
+
+/* Barre de fond (grise) */
+.skill-bar {
+  background: #eee; /* Couleur de fond de la barre — modifiez ici */
+  border-radius: 20px;
+  height: 8px; /* Épaisseur de la barre — modifiez ici */
+  overflow: hidden;
+}
+
+/* Barre de remplissage (colorée) */
+.skill-fill {
+  height: 100%;
+  background: #a78bfa; /* Couleur de remplissage — modifiez ici */
+  border-radius: 20px;
+}
+
+/* =====================
+   CONTACT
+   ===================== */
+
+/* Texte d'intro au dessus du formulaire */
+.contact-intro {
+  margin-bottom: 2rem;
+}
+
+/* Formulaire global */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 600px; /* Largeur max du formulaire — modifiez ici */
+}
+
+/* Bloc label + input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Labels */
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1a1a2e; /* Couleur des labels — modifiez ici */
+}
+
+/* Champs texte et email */
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd; /* Bordure des champs — modifiez ici */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Bordure violette quand le champ est actif */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #a78bfa; /* Couleur focus — modifiez ici */
+}
+
+/* Bouton envoyer */
+button[type="submit"] {
+  background: #a78bfa; /* Couleur du bouton — modifiez ici */
+  color: white;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start; /* Le bouton ne prend pas toute la largeur */
+  transition: opacity 0.2s;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.85;
+}
+
+/* Espace entre le bouton envoyer et le texte réseaux sociaux */
+.social-links-titre {
+  margin-top: 3rem; /* Augmentez cette valeur pour plus d'espace */
+}
+
+/* Liens réseaux sociaux */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  color: #a78bfa; /* Couleur des liens — modifiez ici */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   ANIMATIONS JAVASCRIPT
+   ===================== */
+
+/* État initial des sections — invisibles */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+/* État final — visibles (classe ajoutée par JS) */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lien de navigation actif */
+nav a.actif {
+  color: #a78bfa; /* Couleur du lien actif — modifiez ici */
+  font-weight: bold;
+}
